@@ -203,7 +203,7 @@ top:
       endMoves = generate<QUIETS>(pos, cur);
 
       score<QUIETS>();
-      partial_insertion_sort(cur, endMoves, -4000 * depth / ONE_PLY);
+      partial_insertion_sort(cur, endMoves, -(endMoves - cur > 10 ? 4000 : 8000) * depth / ONE_PLY);
       ++stage;
       /* fallthrough */
 
